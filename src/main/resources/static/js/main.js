@@ -250,8 +250,7 @@ jQuery(document).ready(function($) {
 
 	let owl = $('.owl-carousel');
 	owl.owlCarousel({
-		loop:false,
-		rewind: true,
+		loop:true,
 		nav:true,
 		margin:10,
 		responsive:{

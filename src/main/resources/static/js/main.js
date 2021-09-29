@@ -281,18 +281,17 @@ jQuery(document).ready(function($) {
 	// 모달창 활성화시 body 스크롤 방지
 	$(".mainPortfolioImg").click(function(){
 		$("html").addClass('scroll');
+		owl.trigger('to.owl.carousel', [0]);
 	});
 
 	// 모달창 비활성화시 body 스크롤
 	$(".out").click(function(){
 		$("html").removeClass('scroll');
-		$('.owl-item').removeClass('active');
 	});
 	$(document).mouseup(function (e){
 		let modal = $(".modal");
 		if(modal.has(e.target).length === 0){
 			$("html").removeClass('scroll');
-			$('.owl-item').removeClass('active');
 		}
 	});
 

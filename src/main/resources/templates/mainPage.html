@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
@@ -336,7 +335,7 @@
         </div>
         <div class="modal-body">
           <div class="owl-carousel owl-theme">
-            <div class="item">
+            <div class="item active">
               <img src="images/portfolioDetail/redtimer-detail1.png" class="mainPortfolioImg">
             </div>
             <div class="item">
@@ -451,36 +450,7 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
-
   <script src="js/main.js"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script>
-
-    // 모달창 활성화시 body 스크롤 방지
-    $(".mainPortfolioImg").click(function(){
-      $("html").addClass('scroll');
-    });
-
-    // 모달창 비활성화시 body 스크롤
-    $(".out").click(function(){
-      $("html").removeClass('scroll');
-    });
-    $(document).mouseup(function (e){
-      let modal = $(".modal");
-      if(modal.has(e.target).length === 0){
-        $("html").removeClass('scroll');
-      }
-    });
-
-    // 스크립트 공격방지
-    $("input#send").click(function(){
-      let textarea = $("textarea").val();
-      textarea = textarea.replace(/<script/gi, "&lt;script");
-      $("textarea").val(textarea);
-    });
-
-
-  </script>
 </body>

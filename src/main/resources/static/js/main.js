@@ -277,4 +277,30 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 	});
 
+
+	// 모달창 활성화시 body 스크롤 방지
+	$(".mainPortfolioImg").click(function(){
+		$("html").addClass('scroll');
+	});
+
+	// 모달창 비활성화시 body 스크롤
+	$(".out").click(function(){
+		$("html").removeClass('scroll');
+		$('.owl-item').removeClass('active');
+	});
+	$(document).mouseup(function (e){
+		let modal = $(".modal");
+		if(modal.has(e.target).length === 0){
+			$("html").removeClass('scroll');
+			$('.owl-item').removeClass('active');
+		}
+	});
+
+
+	// 스크립트 공격방지
+	$("input#send").click(function(){
+		let textarea = $("textarea").val();
+		textarea = textarea.replace(/<script/gi, "&lt;script");
+		$("textarea").val(textarea);
+	});
 });

@@ -269,10 +269,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 	owl.on('mousewheel', '.owl-stage', function (e) {
-		if (e.deltaY>0) {
-			owl.trigger('prev.owl');
+		let wheelWay = e.originalEvent.deltaY;
+		if (wheelWay>0) {
+			owl.trigger('next.owl.carousel');
 		} else {
-			owl.trigger('next.owl');
+			owl.trigger('prev.owl.carousel');
 		}
 		e.preventDefault();
 	});

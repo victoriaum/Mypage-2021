@@ -1185,5 +1185,7 @@ div.eduScroll {
   border-radius: 5px;
   padding: 3px 5px;
   margin-right: 5px;
+  margin-bottom: 3px;
+  display: inline-block;
 }
 

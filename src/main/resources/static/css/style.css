@@ -1177,4 +1177,13 @@ div.eduScroll {
     height:50% !important;
   }
 }
+.skillTable > tbody > th {
+  margin: 5px 0;
+}
+.skills {
+  border: 2px solid #fab95b;
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin-right: 5px;
+}
 

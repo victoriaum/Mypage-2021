@@ -303,4 +303,10 @@ jQuery(document).ready(function($) {
 		textarea = textarea.replace(/<script/gi, "&lt;script");
 		$("textarea").val(textarea);
 	});
+
+
+	// 아코디언 처리
+
+
 });
+

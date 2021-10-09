@@ -248,6 +248,25 @@ jQuery(document).ready(function($) {
 	  return false;
 	});
 
+
+  // 해당 월의 일 수 구하기
+	function func_daycount(year, month){
+		return 32 - new Date(year, month-1, 32).getDate();
+	}
+
+	// 학습 스케쥴 년도별 보이게 하기
+	$(".training-year").click(function(){
+		let string;
+		let year = Number(this);
+		for (let i=0; i<12; i++){
+			func_daycount(year, i)
+			string+='<div><span class="month">'+i+'</span><span class=""></span></div>';
+		}
+		$(".train-schedule").html(string);
+	});
+
+
+  // 모달창 carousel
 	let owl = $('.owl-carousel');
 	owl.owlCarousel({
 		loop:true,
@@ -303,10 +322,6 @@ jQuery(document).ready(function($) {
 		textarea = textarea.replace(/<script/gi, "&lt;script");
 		$("textarea").val(textarea);
 	});
-
-
-	// 아코디언 처리
-
 
 });
 

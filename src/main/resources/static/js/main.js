@@ -257,12 +257,30 @@ jQuery(document).ready(function($) {
 	// 학습 스케쥴 년도별 보이게 하기
 	$(".training-year").click(function(){
 		let string;
-		let year = Number(this);
+		let year = $(this).html();
+
 		for (let i=0; i<12; i++){
-			func_daycount(year, i)
-			string+='<div><span class="month">'+i+'</span><span class=""></span></div>';
+			let dayCount = func_daycount(year, i+1)
+			string+='<div id="'+year+" "+(i+1)+'"><span class="month">'+(i+1)+'</span>'
+
+			for (let j=0; j<dayCount; j++){
+				string+='<span class="dayIcon">j</span>';
+			}
+
+			string+='</div>';
 		}
-		$(".train-schedule").html(string);
+
+		if(year=="2021"){
+			$("#schedule-2021").html(string);
+			$("#training-2021").show();
+			$("#training-2020").hide();
+		}
+		if(year=="2020"){
+			$("#schedule-2020").html(string);
+			$("#training-2020").show();
+			$("#training-2021").hide();
+		}
+
 	});
 
 

@@ -1179,7 +1179,7 @@ div.eduScroll {
     height:50% !important;
   }
 }
-.skillTable > tbody > th {
+.skillTable > tbody > th, .trainTable > tbody > th {
   margin: 5px 0;
 }
 .skills {
@@ -1190,4 +1190,5 @@ div.eduScroll {
   margin-bottom: 3px;
   display: inline-block;
 }
+
 

@@ -261,13 +261,14 @@ jQuery(document).ready(function($) {
 
 		for (let i=0; i<12; i++){
 			let dayCount = func_daycount(year, i+1)
-			string+='<div id="'+year+" "+(i+1)+'"><span class="month">'+(i+1)+'</span>'
+			string+='<th class="col-12" id="'+year+" "+(i+1)+'">'+(i+1)+'</th>'
 
 			for (let j=0; j<dayCount; j++){
-				string+='<span class="dayIcon">j</span>';
+				string+='<tr><div class="dayIcon" '
+						+ 'style="border:1px solid #fab95b; width: 15px; height: 15px; display: inline-block; margin-right: 5px;">'
+						+ '</div></tr>';
 			}
 
-			string+='</div>';
 		}
 
 		if(year=="2021"){

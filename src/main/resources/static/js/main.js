@@ -259,17 +259,18 @@ jQuery(document).ready(function($) {
 		let string;
 		let year = $(this).html();
 
-		for (let i=0; i<12; i++){
-			let dayCount = func_daycount(year, i+1)
-			string+='<th class="col-12" id="'+year+" "+(i+1)+'">'+(i+1)+'</th>'
+		for (let i=1; i<13; i++){
+			let dayCount = func_daycount(year, i)
+			string+='<tr><th id="'+year+" "+i+'">'+i+'월</th>'
 
 			for (let j=0; j<dayCount; j++){
-				string+='<tr><div class="dayIcon" '
-						+ 'style="border:1px solid #fab95b; width: 15px; height: 15px; display: inline-block; margin-right: 5px;">'
-						+ '</div></tr>';
+				string+='<td style="padding: 0; vertical-align: middle;">'
+						+ '<span class="dayIcon" '
+						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px; display: inline-block; margin-right: 1px; float: left;">'
+						+ '</span></td>';
 			}
-
-		}
+			string+='</tr>';
+			}
 
 		if(year=="2021"){
 			$("#schedule-2021").html(string);

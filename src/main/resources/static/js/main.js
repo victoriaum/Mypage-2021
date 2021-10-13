@@ -249,6 +249,12 @@ jQuery(document).ready(function($) {
 	});
 
 
+  $(document).ready(function(){
+		// training 2021년도로 초기값 설정하기
+		$("#training-year-2021").click();
+	})
+
+
   // 해당 월의 일 수 구하기
 	function func_daycount(year, month){
 		return 32 - new Date(year, month-1, 32).getDate();
@@ -273,11 +279,15 @@ jQuery(document).ready(function($) {
 			}
 
 		if(year=="2021"){
+			$("#training-year-2021").addClass("clicked-year");
+			$("#training-year-2020").removeClass("clicked-year");
 			$("#schedule-2021").html(string);
 			$("#training-2021").show();
 			$("#training-2020").hide();
 		}
 		if(year=="2020"){
+			$("#training-year-2020").addClass("clicked-year");
+			$("#training-year-2021").removeClass("clicked-year");
 			$("#schedule-2020").html(string);
 			$("#training-2020").show();
 			$("#training-2021").hide();

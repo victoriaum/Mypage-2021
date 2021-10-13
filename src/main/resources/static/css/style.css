@@ -1191,6 +1191,17 @@ div.eduScroll {
   display: inline-block;
 }
 
+.training-year {
+  cursor: pointer;
+}
+.dayIcon {
+  cursor: pointer;
+}
+.clicked-year {
+  font-size: large;
+  font-weight: bold;
+  color: #ad6705;
+}
 .trainTable th, .trainTable td {
   border: none !important;
 }

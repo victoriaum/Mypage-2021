@@ -40,7 +40,7 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#training-section" class="nav-link">Training</a></li>
+                <li><a href="#training-section" class="nav-link">Skills</a></li>
               </ul>
             </nav>
           </div>
@@ -50,7 +50,7 @@
           <div class="text-left">
             <nav class="site-navigation position-relative" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="#skills-section" class="nav-link">Skills</a></li>
+                <li><a href="#skills-section" class="nav-link">Training</a></li>
                 <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
               </ul>
@@ -111,13 +111,75 @@
     </div>
 
 
+
+    <!-- Skills 부분 -->
+    <section class="site-section bg-light" id="skills-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 position-relative">
+            <h2 class="section-title text-center mb-5">Skills</h2>
+          </div>
+        </div>
+        <div class="mb-4">
+          <table class="table table-hover skillTable">
+            <tbody>
+            <tr>
+              <th>Backend</th>
+              <td>
+                <span class="skills">Java</span>
+                <span class="skills">Spring Boot</span>
+                <span class="skills">Spring MVC</span>
+                <span class="skills">JPA</span>
+                <span class="skills">Junit 5</span>
+                <span class="skills">Gradle</span>
+                <span class="skills">Maven</span>
+              </td>
+            </tr>
+            <tr>
+              <th>DevOps</th>
+              <td>
+                <span class="skills">AWS (EC2, Route53, ELB, ACM)</span>
+                <span class="skills">Oracle</span>
+                <span class="skills">MySQL</span>
+              </td>
+            </tr>
+            <tr>
+              <th>Frontend</th>
+              <td>
+                <span class="skills">HTML5</span>
+                <span class="skills">CSS3</span>
+                <span class="skills">JS</span>
+              </td>
+            </tr>
+            <tr>
+              <th>Collaboration Tools</th>
+              <td>
+                <span class="skills">Jira</span>
+                <span class="skills">Notion</span>
+                <span class="skills">Slack</span>
+                <span class="skills">IntelliJ</span>
+                <span class="skills">VSCode</span>
+                <span class="skills">Eclipse</span>
+                <span class="skills">Git</span>
+                <span class="skills">Sourcetree</span>
+                <span class="skills">AdobeXD</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+
     <!-- Training 부분 -->
-    <div class="site-section bg-light" id="training-section">
+    <div class="site-section block__62272" id="training-section">
       <div class="container">
         <h2 class="section-title text-center mb-5">Training</h2>
         <div class="mb-3">
-          <span  class="training-year">2021</span>
-          <span  class="training-year">2020</span>
+          <span  class="training-year" id="training-year-2021">2021</span>
+          <span  class="training-year" id="training-year-2020">2020</span>
         </div>
         <div id="training-2021" style="margin-bottom:30px !important;">
           <table class="table trainTable schedule-2021">
@@ -131,6 +193,8 @@
             <tbody class="train-schedule" id="schedule-2020"></tbody>
           </table>
         </div>
+      </div>
+    </div>
 
 <!--        <div class="row eduScroll">
           <div class="col-lg-6 order-2 order-lg-1" >
@@ -211,71 +275,6 @@
             </div>
           </div>
         </div>-->
-
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Skills 부분 -->
-  <section class="site-section block__62272" id="skills-section">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-12 position-relative">
-          <h2 class="section-title text-center mb-5">Skills</h2>
-        </div>
-      </div>
-      <div class="mb-4">
-        <table class="table table-hover skillTable">
-          <tbody>
-            <tr>
-              <th>Backend</th>
-              <td>
-                <span class="skills">Java</span>
-                <span class="skills">Spring Boot</span>
-                <span class="skills">Spring MVC</span>
-                <span class="skills">JPA</span>
-                <span class="skills">Junit 5</span>
-                <span class="skills">Gradle</span>
-                <span class="skills">Maven</span>
-              </td>
-            </tr>
-            <tr>
-              <th>DevOps</th>
-              <td>
-                <span class="skills">AWS (EC2, Route53, ELB, ACM)</span>
-                <span class="skills">Oracle</span>
-                <span class="skills">MySQL</span>
-              </td>
-            </tr>
-            <tr>
-              <th>Frontend</th>
-              <td>
-                <span class="skills">HTML5</span>
-                <span class="skills">CSS3</span>
-                <span class="skills">JS</span>
-              </td>
-            </tr>
-            <tr>
-              <th>Collaboration Tools</th>
-              <td>
-                <span class="skills">Jira</span>
-                <span class="skills">Notion</span>
-                <span class="skills">Slack</span>
-                <span class="skills">IntelliJ</span>
-                <span class="skills">VSCode</span>
-                <span class="skills">Eclipse</span>
-                <span class="skills">Git</span>
-                <span class="skills">Sourcetree</span>
-                <span class="skills">AdobeXD</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
 
 
   <!-- Portfolio 부분 -->
@@ -491,4 +490,5 @@
   <script src="js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  </div>
 </body>

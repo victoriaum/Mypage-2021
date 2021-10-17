@@ -328,8 +328,14 @@ jQuery(document).ready(function($) {
 			let endDate = schedule[i][2];
 			let tempDate = startDate;
 
+			// dayIcon 색성지정
+			let color = "#";
+			let palette = ['fab95b','f79308','ad6705','7c4a04'];
+			color = color+palette[i%palette.length];
+			console.log(color);
+
 			while(true){
-				$("#"+tempDate).addClass("trainedDay");
+				$("#"+tempDate).css("background-color",color);
 
 				if(tempDate==endDate){
 					break;

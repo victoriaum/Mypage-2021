@@ -260,8 +260,10 @@ jQuery(document).ready(function($) {
 		return 32 - new Date(year, month-1, 32).getDate();
 	}
 
-	// 학습 스케쥴 년도별 보이게 하기
+
+	// 년도 선택에 따른 변경사항
 	$(".training-year").click(function(){
+		// training 칸 생성
 		let string;
 		let year = $(this).html();
 
@@ -269,14 +271,28 @@ jQuery(document).ready(function($) {
 			let dayCount = func_daycount(year, i)
 			string+='<tr id="'+year+" "+i+'"><th>'+i+'월</th>'
 
+			// span id 형식을 yymmdd로 바꾸기 위해 String으로 변환.
 			for (let j=0; j<dayCount; j++){
+				let strYear = String(year).substring(2);
+				let strMonth = String(i);
+				let strDay = String(j);
+
+				if(i<10){
+					strMonth = "0"+strMonth;
+				}
+				if(j<10){
+					strDay = "0"+strDay;
+				}
+
+				let strDate = strYear + strMonth + strDay;
+
 				string+='<td style="padding: 0; vertical-align: middle;">'
-						+ '<span class="dayIcon" id="'+year+" "+i+" "+(j+1)+'" title="'+year+"년 "+i+"월 "+(j+1)+'일" '
+						+ '<span class="dayIcon" id="'+strDate+'" title="'+year+"년 "+i+"월 "+(j+1)+'일" '
 						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px; display: inline-block; margin-right: 1px; float: left;">'
 						+ '</span></td>';
 			}
 			string+='</tr>';
-			}
+		}
 
 		if(year=="2021"){
 			$("#training-year-2021").addClass("clicked-year");
@@ -306,6 +322,17 @@ jQuery(document).ready(function($) {
 									['[Udemy] 장고걸스 튜토리얼 따라하기','210517','210523'],
 									['[유투브] 자바의 정석 기초편','201201','210105'],
 									['[네이버 edwith] 부스트코딩뉴비챌린지','200710','200828']];
+
+
+	// schedule 표기
+	for(let i=0; i<schedule.length; i++) {
+		let trainTitle = schedule[i][0];
+		let startDate = schedule[i][1];
+		let endDate = schedule[i][2];
+
+		$("#"+startDate).addClass("trainedDay");
+		$("#"+endDate).addClass("trainedDay");
+	}
 
 
   // 모달창 carousel

@@ -287,7 +287,7 @@ jQuery(document).ready(function($) {
 				let strDate = strYear + strMonth + strDay;
 
 				string+='<td style="padding: 0; vertical-align: middle;">'
-						+ '<span class="dayIcon" id="'+strDate+'" title="'+year+"년 "+i+"월 "+(j+1)+'일" '
+						+ '<span class="dayIcon" id="'+strDate+'"'
 						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px; display: inline-block; margin-right: 1px; float: left;">'
 						+ '</span></td>';
 			}

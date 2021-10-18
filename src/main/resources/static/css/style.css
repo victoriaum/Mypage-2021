@@ -1191,6 +1191,7 @@ div.eduScroll {
   display: inline-block;
 }
 
+
 .training-year {
   cursor: pointer;
 }
@@ -1201,9 +1202,6 @@ div.eduScroll {
   font-size: large;
   font-weight: bold;
   color: #ad6705;
-}
-.trainedDay {
-  background: #fab95b;
 }
 .trainTable th, .trainTable td {
   border: none !important;

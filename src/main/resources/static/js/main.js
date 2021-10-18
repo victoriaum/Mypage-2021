@@ -261,9 +261,20 @@ jQuery(document).ready(function($) {
 	}
 
 
+	// training 스케쥴 입력하기
+	let schedule = [['[네이버 부스트코스] 웹 백엔드','210820','211016'],
+									['[인프런] REST API, 모바일 앱 만들기','210805','210817'],
+									['[생활코딩] 아마존 웹서비스 (AWS)','210701','210728'],
+									['[인프런] 스프링 입문과정','210621','210623'],
+									['[쌍용교육센터] 자바를 활용한 풀스텍 융합 SW개발자 양성과정','210106','210615'],
+									['[코멘토] 파이썬으로 배우는 백엔드 개발 실무','210509','210530'],
+									['[Udemy] 장고걸스 튜토리얼 따라하기','210517','210523'],
+									['[유투브] 자바의 정석 기초편','201201','210105'],
+									['[네이버 edwith] 부스트코딩뉴비챌린지','200710','200828']];
+
+
 	// 년도 선택에 따른 변경사항
 	$(".training-year").click(function(){
-		// training 칸 생성
 		let string;
 		let year = $(this).html();
 
@@ -309,21 +320,9 @@ jQuery(document).ready(function($) {
 			$("#training-2021").hide();
 		}
 
-		// training 스케쥴 입력하기
-		let schedule = [['[네이버 부스트코스] 웹 백엔드','210820','211016'],
-			['[인프런] REST API, 모바일 앱 만들기','210805','210817'],
-			['[생활코딩] 아마존 웹서비스 (AWS)','210701','210728'],
-			['[인프런] 스프링 입문과정','210621','210623'],
-			['[쌍용교육센터] 자바를 활용한 풀스텍 융합 SW개발자 양성과정','210106','210615'],
-			['[코멘토] 파이썬으로 배우는 백엔드 개발 실무','210509','210530'],
-			['[Udemy] 장고걸스 튜토리얼 따라하기','210517','210523'],
-			['[유투브] 자바의 정석 기초편','201201','210105'],
-			['[네이버 edwith] 부스트코딩뉴비챌린지','200710','200828']];
-
-
 		// schedule 표기
 		for(let i=0; i<schedule.length; i++) {
-			let trainTitle = schedule[i][0];
+			let description = schedule[i][0];
 			let startDate = schedule[i][1];
 			let endDate = schedule[i][2];
 			let tempDate = startDate;
@@ -332,10 +331,10 @@ jQuery(document).ready(function($) {
 			let color = "#";
 			let palette = ['fab95b','f79308','ad6705','7c4a04'];
 			color = color+palette[i%palette.length];
-			console.log(color);
 
 			while(true){
 				$("#"+tempDate).css("background-color",color);
+				$("#"+tempDate).attr("class", "train"+i);
 
 				if(tempDate==endDate){
 					break;
@@ -344,6 +343,9 @@ jQuery(document).ready(function($) {
 				}
 			}
 		}
+
+		// 설명달기
+
 	});
 
 

@@ -298,8 +298,10 @@ jQuery(document).ready(function($) {
 				let strDate = strYear + strMonth + strDay;
 
 				string+='<td style="padding: 0; vertical-align: middle;">'
-						+ '<span class="dayIcon" id="'+strDate+'" data-toggle="modal" href="#trainingModal"'
-						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px; display: inline-block; margin-right: 1px; float: left;">'
+						+ '<span class="dayIcon show-tooltip" id="'+strDate+'" '
+						+ 'data-toggle="tooltip" data-html="true"'
+						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px;'
+						+        'display: inline-block; margin-right: 1px; float: left;">'
 						+ '</span></td>';
 			}
 			string+='</tr>';
@@ -322,37 +324,40 @@ jQuery(document).ready(function($) {
 
 		// schedule 표기
 		for(let i=0; i<schedule.length; i++) {
-			let description = schedule[i][0];
+			let traingName = schedule[i][0];
 			let startDate = schedule[i][1];
 			let endDate = schedule[i][2];
 			let tempDate = startDate;
 
 			// dayIcon 색성지정
 			let color = "#";
-			let palette = ['fab95b','f79308','ad6705','7c4a04'];
-			color = color+palette[i%palette.length];
+			let palette = ['fab95b', 'f79308', 'ad6705', '7c4a04'];
+			color = color + palette[i % palette.length];
 
-			while(true){
-				$("#"+tempDate).css("background-color",color);
-				$("#"+tempDate).addClass("training"+i);
+			while (true) {
+				$("#" + tempDate).css("background-color", color);
+				$("#" + tempDate).attr("title",
+						startDate + " ~ " + endDate + " ▶ " + traingName);
 
-				if(tempDate==endDate){
+				if (tempDate == endDate) {
 					break;
 				} else {
-					tempDate = String(Number(tempDate)+1);
+					tempDate = String(Number(tempDate) + 1);
 				}
 			}
 		}
 
-		// 설명달기
-		$(".dayIcon").mouseover(function(e){
-				let x = e.pageX;
-				let y = e.pageY;
-				console.log('x좌표:' +x + ', y좌표:' + y);
+	});
 
 
-		});
-
+	// training 모달창 상세 설명달기
+	$("#training-list").click(function(e){
+		let string="";
+		for(let k=0; k<schedule.length; k++) {
+			string += "<p><h4>No."+(k+1)+"</h4><h5>"+schedule[k][0]+"</h5>"
+					+ "<span>교육일자 : "+schedule[k][1] + " ~ " + schedule[k][2]+"</span></p>";
+		}
+		$("#training-detail").append(string);
 	});
 
 

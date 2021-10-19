@@ -298,7 +298,7 @@ jQuery(document).ready(function($) {
 				let strDate = strYear + strMonth + strDay;
 
 				string+='<td style="padding: 0; vertical-align: middle;">'
-						+ '<span class="dayIcon" id="'+strDate+'"'
+						+ '<span class="dayIcon" id="'+strDate+'" data-toggle="modal" href="#trainingModal"'
 						+ 'style="border:1px solid #fab95b; border-radius: 5px; width: 70%; height: 20px; display: inline-block; margin-right: 1px; float: left;">'
 						+ '</span></td>';
 			}
@@ -334,7 +334,7 @@ jQuery(document).ready(function($) {
 
 			while(true){
 				$("#"+tempDate).css("background-color",color);
-				$("#"+tempDate).attr("class", "train"+i);
+				$("#"+tempDate).addClass("training"+i);
 
 				if(tempDate==endDate){
 					break;
@@ -345,6 +345,13 @@ jQuery(document).ready(function($) {
 		}
 
 		// 설명달기
+		$(".dayIcon").mouseover(function(e){
+				let x = e.pageX;
+				let y = e.pageY;
+				console.log('x좌표:' +x + ', y좌표:' + y);
+
+
+		});
 
 	});
 

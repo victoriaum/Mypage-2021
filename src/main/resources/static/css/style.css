@@ -1101,13 +1101,20 @@ hr#skillSplit {
 
 /* 모달창 관련 css */
 .modal {
-  overflow: hidden !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .slide{
   border: solid 3px #fab95b;
 }
 .modal-content{
-  height: 90% !important;
+  /*height: 90% !important;*/
 }
 .myModalLabel{
   font-weight: bold;

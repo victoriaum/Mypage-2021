@@ -1201,6 +1201,7 @@ div.eduScroll {
 }
 #training-modal-body{
   overflow: auto;
+  color: black;
 }
 .dayIcon {
   cursor: pointer;
@@ -1222,4 +1223,16 @@ div.eduScroll {
 }
 thead {
   height: 10px;
+}
+.training-detail-contents {
+  border-radius: 5px;
+  padding: 5px;
+}
+.training-detail-title {
+  font-weight: bold;
+  margin-bottom: 2px;
+  border-bottom: 2px solid #fab95b;
+}
+.training-detail-period {
+  color: #ad6705;
 }

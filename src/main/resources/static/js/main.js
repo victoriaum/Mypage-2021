@@ -249,10 +249,29 @@ jQuery(document).ready(function($) {
 	});
 
 
+
+
   $(document).ready(function(){
 		// training 2021년도로 초기값 설정하기
 		$("#training-year-2021").click();
 	})
+
+
+	// 오늘 날짜 구하기
+	let today;
+	let now = new Date();
+	let year = now.getFullYear();
+	let month = now.getMonth()+1;
+	let date = now.getDate();
+
+	if(month<10){
+		month = "0"+month;
+	}
+	if(date<10){
+		date = "0"+date;
+	}
+
+	today = String(year).substring(2)+month+date;
 
 
   // 해당 월의 일 수 구하기
@@ -262,7 +281,7 @@ jQuery(document).ready(function($) {
 
 
 	// training 스케쥴 입력하기
-	let schedule = [['[네이버 부스트코스] 웹 백엔드','210820','211020', 'MySQL을 이용한 데이터베이스 관리에 대해 학습중입니다.'],
+	let schedule = [['[네이버 부스트코스] 웹 백엔드','210820',today, 'MySQL을 이용한 데이터베이스 관리에 대해 학습중입니다.'],
 									['[인프런] REST API, 모바일 앱 만들기','210805','210817','API에 대해 알고자 수강했으며 모바일 앱을 Flutter를 이용해서 만들어보았습니다.'],
 									['[생활코딩] 아마존 웹서비스 (AWS)','210701','210728','AWS에 대해 알고 제 소개 페이지를 배포하는데 활용했습니다.'],
 									['[인프런] 스프링 입문과정','210621','210623','IntelliJ를 활요한 Spring Gradle을 학습했고, 제 소개 페이지 작성에 활용했습니다.'],

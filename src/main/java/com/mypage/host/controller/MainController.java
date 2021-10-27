@@ -19,6 +19,10 @@ public class MainController {
         return "mainPage";
     }
 
+    @GetMapping("/en")
+    public String mainPage_en() {
+        return "mainPage_english";
+    }
 
     @Autowired
     MailSender send;

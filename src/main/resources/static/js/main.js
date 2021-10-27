@@ -259,6 +259,7 @@ jQuery(document).ready(function($) {
 
 	// 오늘 날짜 구하기
 	let today;
+
 	let now = new Date();
 	let year = now.getFullYear();
 	let month = now.getMonth()+1;

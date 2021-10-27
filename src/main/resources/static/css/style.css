@@ -1042,6 +1042,19 @@ figure figcaption {
   font-style: italic;
   font-size: .8rem; }
 
+
+#lang {
+  margin-right: 10%;
+}
+.language {
+  font-weight: bold;
+  float: right;
+  color: #f79308;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+
 .thinking {
     font-weight: bold;
 }

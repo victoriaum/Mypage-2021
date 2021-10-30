@@ -293,6 +293,18 @@ jQuery(document).ready(function($) {
 									['[네이버 edwith] 부스트코딩뉴비챌린지','200710','200828','개발 분야에 관심을 갖고 진로 결정에 도움을 준 계기가 되었습니다. C언어를 기반으로 CS50 강의를 기반으로 팀 단위로 진행된 활동이었습니다.']];
 
 
+	let schedule_en = [['[Naver boostcourse] Web Backend','210820',today, 'Present learning MySQL'],
+											['[Inflearn] REST API, Makeing Mobile Application','210805','210817','Learned restful API and making moblie application using Flutter.'],
+											['[Opentutorials] AWS','210701','210728','Learned about AWS and using for this website(ilpyo.link).'],
+											['[Inflearn] Introductory course of Spring Framework','210621','210623','Using Spring Gradle on IntelliJ, and using for this website(ilpyo.link).'],
+											['[SIST] Full-stack SW developer training process using Java','210106','210615','Learned skills based on Java for developing web service. And did three team project.'],
+											['[Comento] Backend development practice learned through Python','210509','210530','Learned API design and development from Python basic concept. And I learned about the code convention through a code review by an mentor.'],
+											['[Udemy] Django Girl tutorial','210517','210523','Took a class to understanding restful API more when studying Comento program.'],
+											['[Youtube] The basics of Java','201201','210105','Before Java course of SIST center, listening to understand Basic of Java.'],
+											['[Naver edwith] Coding Newbee Challenge','200710','200828','CS50 lecture based on C language. This experience is direct reason for career change.']];
+
+
+
 	// 년도 선택에 따른 변경사항
 	$(".training-year").click(function(){
 		let string;
@@ -300,7 +312,12 @@ jQuery(document).ready(function($) {
 
 		for (let i=1; i<13; i++){
 			let dayCount = func_daycount(year, i)
-			string+='<tr id="'+year+" "+i+'"><th>'+i+'월</th>'
+
+			if(!$(this).hasClass("en")) {	// 한글페이지
+				string += '<tr id="' + year + " " + i + '"><th>' + i + '월</th>'
+			} else {	// 영문페이지
+				string+='<tr id="'+year+" "+i+'"><th>'+i+'</th>'
+			}
 
 			// span id 형식을 yymmdd로 바꾸기 위해 String으로 변환.
 			for (let j=0; j<dayCount; j++){
@@ -344,10 +361,19 @@ jQuery(document).ready(function($) {
 
 		// schedule 표기
 		for(let i=0; i<schedule.length; i++) {
-			let traingName = schedule[i][0];
-			let startDate = schedule[i][1];
-			let endDate = schedule[i][2];
-			let tempDate = startDate;
+
+			let traingName, startDate, endDate, tempDate;
+
+			if(!$(this).hasClass("en")) {	// 한글페이지
+				traingName = schedule[i][0];
+				startDate = schedule[i][1];
+				endDate = schedule[i][2];
+			} else {	// 영문페이지
+				traingName = schedule_en[i][0];
+				startDate = schedule_en[i][1];
+				endDate = schedule_en[i][2];
+			}
+			tempDate = startDate;
 
 			// dayIcon 색성지정
 			let color = "#";
@@ -373,16 +399,27 @@ jQuery(document).ready(function($) {
 	// training 모달창 상세 설명달기
 	$("#training-list").click(function(e){
 		let string="";
-		for(let k=0; k<schedule.length; k++) {
-			string += "<p class='training-detail-contents'><span class='training-detail-title'>No."+(k+1)+"&nbsp;&nbsp;&nbsp;"+schedule[k][0]+"</span><br>"
-					+ "<span class='training-detail-period'>"+schedule[k][1] + " ~ " + schedule[k][2]+"</span><br>"
-					+ "<span> "+schedule[k][3]+"</span></p>";
+		if(!$(this).hasClass("en")) {	// 한글페이지
+			for(let k=0; k<schedule.length; k++) {
+				string += "<p class='training-detail-contents'><span class='training-detail-title'>No."+(k+1)+"&nbsp;&nbsp;&nbsp;"+schedule[k][0]+"</span><br>"
+						+ "<span class='training-detail-period'>"+schedule[k][1] + " ~ " + schedule[k][2]+"</span><br>"
+						+ "<span> "+schedule[k][3]+"</span></p>";
+			}
+		} else {
+			for(let k=0; k<schedule_en.length; k++) {
+				string += "<p class='training-detail-contents'><span class='training-detail-title'>No."+(k+1)+"&nbsp;&nbsp;&nbsp;"+schedule_en[k][0]+"</span><br>"
+						+ "<span class='training-detail-period'>"+schedule_en[k][1] + " ~ " + schedule_en[k][2]+"</span><br>"
+						+ "<span> "+schedule_en[k][3]+"</span></p>";
+			}
 		}
+
 		$("#training-detail").append(string);
 	});
 
 
-  // 모달창 carousel
+
+
+	// 모달창 carousel
 	let owl = $('.owl-carousel');
 	owl.owlCarousel({
 		loop:true,

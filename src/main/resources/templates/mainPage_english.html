@@ -256,6 +256,7 @@
       </div>
 
       <form class="form" role="form" action method="post">
+        <input type="hidden" value="englishMessage" th:name="messageLanguage">
         <div class="row mb-4">
           <div class="form-group col-12">
             <input type="email" class="form-control" id="sender" th:name="sender" placeholder="Sender Email Address">
@@ -276,7 +277,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" id="send" value="Submit" style="float: right;">
+            <input type="submit" class="btn btn-primary en" id="send" value="Submit" style="float: right;">
           </div>
         </div>
       </form>

@@ -14,15 +14,16 @@ import java.io.UnsupportedEncodingException;
 @Controller
 public class MainController {
 
+    @GetMapping("/en")
+    public String mainPage_en() {
+        return "mainPage_english";
+    }
+
     @GetMapping("/")
     public String mainPage() {
         return "mainPage";
     }
 
-    @GetMapping("/en")
-    public String mainPage_en() {
-        return "mainPage_english";
-    }
 
     @Autowired
     MailSender send;

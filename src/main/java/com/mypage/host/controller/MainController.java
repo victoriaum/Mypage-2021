@@ -36,7 +36,7 @@ public class MainController {
 
 
     @RequestMapping(value = {"/","/en" }, method = RequestMethod.POST)
-    public ModelAndView send(@RequestParam("messageLanguage") String messageLanguage, @RequestParam("sender") String sender, @RequestParam("emailSubject") String emailSubject,
+    public ModelAndView send(@RequestParam("sender") String sender, @RequestParam("emailSubject") String emailSubject,
                              @RequestParam("emailContent") String emailContent, ModelAndView m) throws UnsupportedEncodingException {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo("ilpyoyang@gmail.com");
@@ -46,12 +46,7 @@ public class MainController {
 
         send.send(message);
 
-        if("koreanMessage".equals(messageLanguage)){
-            m.setViewName("msg");
-        } else {
-            m.setViewName("msg_english");
-        }
-
+        m.setViewName("msg");
         return m;
     }
 }

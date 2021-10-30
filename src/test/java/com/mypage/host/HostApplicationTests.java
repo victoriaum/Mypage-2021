@@ -17,7 +17,7 @@ class HostApplicationTests {
 
     @Test
     void sendTest() throws UnsupportedEncodingException {
-        controller.send("korean-page-direct","IntelliJ 테스터","JUnit 테스트","테스트용 메일 전송입니다!", m);
+        controller.send("IntelliJ 테스터","JUnit 테스트","테스트용 메일 전송입니다!", m);
     }
 
 }

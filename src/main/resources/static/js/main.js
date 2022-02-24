@@ -252,8 +252,8 @@ jQuery(document).ready(function($) {
 
 
   $(document).ready(function(){
-		// training 2021년도로 초기값 설정하기
-		$("#training-year-2021").click();
+		// training 2022년도로 초기값 설정하기
+		$("#training-year-2022").click();
 	})
 
 
@@ -282,7 +282,8 @@ jQuery(document).ready(function($) {
 
 
 	// training 스케쥴 입력하기
-	let schedule = [['[네이버 부스트코스] 웹 백엔드','210820',today, 'MySQL을 이용한 데이터베이스 관리에 대해 학습중입니다.'],
+	let schedule = [['[네이버 부스트코스] 웹 백엔드','220101',today, 'MySQL을 이용한 데이터베이스 관리에 대해 학습중입니다.'],
+									['[책] 스프링 부트와 AWS로 혼자 구현하는 웹 서비스','210820','211111', 'AWS와 MariaDB를 이용한 웹프로젝트 배포에 활용하기 위해 학습했습니다.'],
 									['[인프런] REST API, 모바일 앱 만들기','210805','210817','API에 대해 알고자 수강했으며 모바일 앱을 Flutter를 이용해서 만들어보았습니다.'],
 									['[생활코딩] 아마존 웹서비스 (AWS)','210701','210728','AWS에 대해 알고 제 소개 페이지를 배포하는데 활용했습니다.'],
 									['[인프런] 스프링 입문과정','210621','210623','IntelliJ를 활요한 Spring Gradle을 학습했고, 제 소개 페이지 작성에 활용했습니다.'],
@@ -294,6 +295,7 @@ jQuery(document).ready(function($) {
 
 
 	let schedule_en = [['[Naver boostcourse] Web Backend','210820',today, 'Present learning MySQL'],
+											['[Book] ','210820','211111', 'Learned to use it for web project distribution using AWS and MariaDB.'],
 											['[Inflearn] REST API, Makeing Mobile Application','210805','210817','Learned restful API and making moblie application using Flutter.'],
 											['[Opentutorials] AWS','210701','210728','Learned about AWS and using for this website(ilpyo.link).'],
 											['[Inflearn] Introductory course of Spring Framework','210621','210623','Using Spring Gradle on IntelliJ, and using for this website(ilpyo.link).'],
@@ -320,7 +322,7 @@ jQuery(document).ready(function($) {
 			}
 
 			// span id 형식을 yymmdd로 바꾸기 위해 String으로 변환.
-			for (let j=0; j<dayCount; j++){
+			for (let j=1; j<=dayCount; j++){
 				let strYear = String(year).substring(2);
 				let strMonth = String(i);
 				let strDay = String(j);
@@ -344,18 +346,31 @@ jQuery(document).ready(function($) {
 			string+='</tr>';
 		}
 
+		if(year=="2022"){
+			$("#training-year-2022").addClass("clicked-year");
+			$("#training-year-2021").removeClass("clicked-year");
+			$("#training-year-2020").removeClass("clicked-year");
+			$("#schedule-2022").html(string);
+			$("#training-2022").show();
+			$("#training-2021").hide();
+			$("#training-2020").hide();
+		}
 		if(year=="2021"){
 			$("#training-year-2021").addClass("clicked-year");
+			$("#training-year-2022").removeClass("clicked-year");
 			$("#training-year-2020").removeClass("clicked-year");
 			$("#schedule-2021").html(string);
 			$("#training-2021").show();
+			$("#training-2022").hide();
 			$("#training-2020").hide();
 		}
 		if(year=="2020"){
 			$("#training-year-2020").addClass("clicked-year");
+			$("#training-year-2022").removeClass("clicked-year");
 			$("#training-year-2021").removeClass("clicked-year");
 			$("#schedule-2020").html(string);
 			$("#training-2020").show();
+			$("#training-2022").hide();
 			$("#training-2021").hide();
 		}
 
